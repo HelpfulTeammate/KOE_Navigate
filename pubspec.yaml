@@ -1,6 +1,6 @@
 name: koe_navigate
 description: "A navigation application of the KOE buildings for Lab 3101 as application of the graph traversal technique."
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  nb_utils: any
 
 dev_dependencies:
   flutter_test:
@@ -21,6 +22,5 @@ flutter:
 
   uses-material-design: true
 
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+     - assets/
