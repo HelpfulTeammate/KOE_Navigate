@@ -140,4 +140,26 @@ TextStyle basicText({
   );
 }
 
+void popUpDialog(BuildContext context, String title, String subtitle) {
+  Future.delayed(Duration.zero, () {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(title),
+          content: Text(subtitle),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Ok', style: basicText()),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  });
+}
+
 Color green = const Color.fromARGB(255, 16, 132, 108);

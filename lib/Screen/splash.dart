@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:koe_navigate/Screen/home.dart';
+import 'package:koe_navigate/Screen/Search/current.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
       () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const Home()),
+          MaterialPageRoute(builder: (context) => const currentLocation()),
         );
       },
     );

@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:koe_navigate/Data/Model.dart';
 import 'package:koe_navigate/widget.dart';
 
-class Level extends StatelessWidget {
+class Floor extends StatelessWidget {
+  final int floor;
   final BuildingModel building;
 
-  const Level({
+  const Floor({
     Key? key,
+    required this.floor,
     required this.building,
   }) : super(key: key);
 
@@ -18,7 +20,7 @@ class Level extends StatelessWidget {
       child: Scaffold(
         appBar: BasicAppBar(
           height: MediaQuery.of(context).size.height * 0.12,
-          subName: "Current location: ${building.name}",
+          subName: "Current location: ${building.name}, Level $floor",
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -27,22 +29,14 @@ class Level extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Which level are you on?',
+                  'Choose node closest to your current location.',
                   style: basicText(),
                 ),
                 const SizedBox(height: 16),
-                for (int i = building.noOfLevels; i >= 1; i--)
-                  ElevatedButton(
-                    onPressed: () {
-                      print('Level $i selected');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+                Image.asset(
+                        building.floors[floor-1].imageAsset,
+                        fit: BoxFit.fill,
                       ),
-                    ),
-                    child: Text('Level $i'),
-                  ),
               ],
             ),
           ),

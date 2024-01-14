@@ -24,6 +24,22 @@ class FloorModel {
   });
 }
 
+class NodeModel {
+  final String nodeName;
+  final String nodeBlock;
+  final String nodeFloor;
+  String nodeType;
+  final List<Point<int>> coordinates;
+
+  NodeModel({
+    required this.nodeName,
+    required this.nodeBlock,
+    required this.nodeFloor,
+    this.nodeType = "location",
+    required this.coordinates,
+  });
+}
+
 class Point<T> {
   final T x;
   final T y;

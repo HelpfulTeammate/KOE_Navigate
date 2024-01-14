@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:koe_navigate/Data/Provider.dart';
-import 'package:koe_navigate/Screen/level.dart';
+import 'package:koe_navigate/Screen/Select/level.dart';
+import 'package:koe_navigate/Screen/Search/current.dart';
 import 'package:koe_navigate/widget.dart';
 
 class Home extends StatelessWidget {
@@ -19,7 +20,7 @@ class Home extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'Choose your current location.',
@@ -129,6 +130,16 @@ class Home extends StatelessWidget {
                       ),
                     ],
                   ),
+                ),
+                const SizedBox(height: 5,),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const currentLocation()),
+                            );
+                  },
+                  child: const Text('Search for Location'),
                 ),
               ],
             ),
